@@ -43,7 +43,8 @@ providers**.
 When the principal, Alice on her browser, tries to access a protected resource
 (`/flights`), the service provider (`https://flights.acme-corp.biz`) doesn't present
 her with a login page. Instead, it redirects her to an **identity provider**
-(`https://idp.acme-corp.biz`) with an authentication request in the query
+(`https://idp.acme-corp.biz`) with 
+entication request in the query
 parameter. The identity provider uses the authentication request to tell which
 service provider is making the request. Alice is now logged into the identity
 provider. In this context, we can also call the identity provider a **session
@@ -74,8 +75,8 @@ a fancy term for "creating a new thing").
 
 Why didn't Alice need to re-authenticate? Remember that when she redirected to
 the identity provider for booking her flight, she established a session with the
-identity provider. When this other service provider (`https://cars.acme-corp.biz`)
-sent a authentication request, the identity provider saw that Alice had
+identity provider. When the other service provider (`https://cars.acme-corp.biz`)
+sent an authentication request, the identity provider saw that Alice had been
 previously authenticated because of her active session. There's no need for
 Alice to re-authenticate again, so the identity provider redirects her back to
 the site she wanted with a successful response.
